@@ -1,0 +1,593 @@
+@use 'variaveis';
+
+/*Geral*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: variaveis.$corDefundo;
+    color: variaveis.$corSecundaria;
+    font-family: variaveis.$fontPrincipal;
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 60px;
+}
+
+.subtitulo {
+    color: variaveis.$corPrincipal;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.linha-vermelha {
+    width: 100%;
+    background-color: variaveis.$corPrincipal;
+    padding: 2px;
+}
+
+/* CONFIGURAÇÕES DA SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: variaveis.$corDefundo;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: variaveis.$corPrincipal;
+    border: 1px solid variaveis.$corDefundo;
+
+    hover {
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        background: variaveis.$corPrincipal;
+        border: 1px solid variaveis.$corDefundo;
+    }
+}
+
+*::selection {
+    color: variaveis.$corSecundaria;
+    background: variaveis.$corPrincipal;
+    -webkit-text-fill-color: variaveis.$corSecundaria;
+}
+
+
+/*Seção faixa*/
+.faixa1 {
+    background: variaveis.$corPrincipal;
+    width: 110%;
+    margin: 60px 0;
+    z-index: 2;
+    position: relative;
+}
+
+.faixa2 {
+    background: variaveis.$corPrincipal;
+    transform: rotate(-3deg) translateY(-110px);
+    z-index: 1;
+    width: 110%;
+    opacity: 0.4;
+    filter: blur(3px);
+}
+
+
+.text-wrapper p {
+    font-family: variaveis.$fontPrincipal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    color: #fff;
+}
+
+
+.text-wrapper {
+    display: flex;
+    padding: 15px;
+    text-align: right;
+}
+
+.text-wrapper p {
+    font-family: variaveis.$fontPrincipal;
+    font-size: 1em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#text-wrapper1 {
+    animation: animafaixa 15s infinite linear;
+}
+
+#text-wrapper2 {
+    animation: animafaixa 15s infinite linear reverse;
+}
+
+
+
+@keyframes animafaixa {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/*Header*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &-container {
+        padding: 8px 20px;
+    }
+
+    &-menu {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+        a {
+            font-size: 1rem;
+            line-height: 1.3;
+            padding: 14px;
+            text-decoration: none;
+            color: variaveis.$corSecundaria;
+            font-weight: 700;
+            display: block;
+            text-transform: uppercase;
+
+            &:hover {
+                background: #e4393933;
+                color: variaveis.$corSecundaria;
+            }
+        }
+    }
+}
+
+header a {
+    border-radius: 10px;
+}
+
+.logo {
+    img {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* introdução */
+.introducao {
+    margin-top: 60px;
+
+    img {
+        max-width: 100%;
+        border-radius: 50%;
+        width: 300px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    strong {
+        color: variaveis.$corPrincipal;
+    }
+}
+
+.contatos {
+    &-lista {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 40px;
+
+        li {
+            width: 50px;
+        }
+
+        img {
+            border-radius: initial;
+            transition: transform 0.5s ease-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.img-fundo{
+    position: absolute;
+      bottom: 0px;
+      left: 0px;
+      filter: blur(200px);
+      z-index: -1;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      opacity: 0.25;
+      animation: girablob 20s infinite linear;
+  }
+
+  .img-fundo2{
+    position: absolute;
+      top: 1500px;
+      right: 0px;
+      filter: blur(200px);
+      z-index: -1;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      opacity: 0.25;
+      animation: girablob 20s infinite linear;
+  }
+  @keyframes girablob {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0.25;
+    } 49%, 51%, 53%, 55%, 57% {
+        opacity: 0.25;
+    } 50%, 52%, 54%, 56% {
+        opacity: 0;
+    } 100% {
+        opacity: 0.25;
+        transform: rotate(360deg);
+    }
+  }
+
+/*Section sobre*/
+.sobre p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/*Section habilidades*/
+
+.habilidades {
+    h3 {
+        line-height: 1.4;
+        color: variaveis.$corSecundaria;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        position: relative;
+        margin-top: 30px;
+    }
+
+    &-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    &-tipo {
+        background: #30303059;
+        border: 1px solid #3D3D3D;
+        border-radius: 10px;
+        padding: 40px;
+        max-width: 100%;
+
+        img {
+            margin: 0 auto;
+        }
+    }
+}
+
+// Hobby
+
+.hobby {
+    &-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 100px;
+    }
+
+    &-subtitulo {
+        color: variaveis.$corPrincipal;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    &-card {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 20px;
+
+        &-tipo {
+            text-align: center;
+            background: #30303059;
+            border: 1px solid #3D3D3D;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 100%;
+
+            img {
+                padding-bottom: 20px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+}
+
+// Motivação
+
+.motivacao {
+    &-container {
+        margin-top: 100px;
+        padding: 40px;
+        background: #30303059;
+        border: 1px solid #3D3D3D;
+        border-radius: 10px;
+    }
+
+    &-titulo {
+        color: variaveis.$corPrincipal;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: 700;
+    }
+}
+
+
+/*footer*/
+footer {
+    width: 100%;
+    margin-top: 100px;
+    padding: 8px;
+    background: variaveis.$corDefundo;
+
+    p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.33;
+        color: variaveis.$corSecundaria;
+    }
+
+    strong {
+        color: variaveis.$corPrincipal;
+    }
+}
+
+// Media Querie
+
+@media (max-width: 1023px) {
+    .container {
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 40px;
+    }
+
+    .habilidades {
+        &-card {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+    }
+
+    .hobby {
+        &-container {
+            grid-template-columns: 1fr;
+        }
+
+        &-subtitulo {
+            margin-top: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+    .header {
+        &-menu {
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1022px) {
+    .habilidade {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 20px;
+    }
+
+    .subtitulo {
+        margin-top: 40px;
+    }
+
+    .faixa1 {
+        margin: 60px 0 40px 0;
+    }
+
+    .header {
+        display: block;
+
+        &-menu {
+            gap: initial;
+
+            a {
+                padding: 10px 15px 10px 5px;
+
+                &:hover {
+                    background: none;
+                    color: variaveis.$corSecundaria;
+                }
+            }
+        }
+    }
+
+    .introducao {
+        h1 {
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        img {
+            margin: 0 auto;
+            max-width: 100%;
+            width: 230px;
+        }
+    }
+
+    .sobre {
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .contatos {
+        &-lista {
+            gap: 10px !important;
+            width: 260px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+    }
+
+    .motivacao {
+        &-container {
+            padding: 20px;
+        }
+    }
+
+    .habilidade {
+        grid-template-columns: 1fr 1fr;
+
+        h3 {
+            font-size: 1rem;
+        }
+    }
+
+    .habilidades {
+        &-card {
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+    }
+
+    .hobby {
+        &-card {
+            grid-template-columns: 1fr;
+        }
+
+        &-subtitulo {
+            margin-top: 60px;
+        }
+    }
+
+    .motivacao {
+        &-container {
+            margin-top: 60px;
+        }
+    }
+
+    .img-fundo {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        filter: blur(85px);
+        z-index: -1;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        opacity: 0.25;
+        animation: girablob 20s infinite linear;
+    }
+    .img-fundo2 {
+      position: absolute;
+      top: 1300px;
+      right: 0px;
+      filter: blur(85px);
+      z-index: -1;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      opacity: 0.25;
+      animation: girablob 20s infinite linear;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    .header {
+        &-nav-menu {
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+    }
+}
