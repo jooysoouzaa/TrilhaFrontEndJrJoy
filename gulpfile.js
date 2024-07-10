@@ -26,7 +26,6 @@ function comprimeImagens() {
 function substituiUrls() {
     return gulp.src('./source/*.html') // Assumindo que seus arquivos HTML estão em source/
         .pipe(replace('ENDERECO_DO_CSS', './styles/style.css')) 
-        .pipe(replace('ENDERECO_DA_IMAGEM', './images/*')) 
         .pipe(gulp.dest('./build'));
 }
 
