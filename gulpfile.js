@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
+const replace = require('gulp-replace');
 
 // Função para comprimir imagens
 function comprimeImagens() {
@@ -21,9 +22,10 @@ function compilaSass() {
         .pipe(gulp.dest('./build/styles'));
 }
 
-// Função para copiar arquivos HTML
+// Função para copiar e ajustar arquivos HTML
 function copiaHtml() {
     return gulp.src('./source/*.html')
+        .pipe(replace('src="images/', 'src="build/images/'))  // Ajusta os caminhos das imagens
         .pipe(gulp.dest('./build'));
 }
 
