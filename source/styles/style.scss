@@ -6,9 +6,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
+
 html,
 body {
     overflow-x: hidden;
@@ -98,7 +100,7 @@ img {
 .faixa1 {
     background: variaveis.$corPrincipal;
     width: 110%;
-    margin: 60px 0;
+    margin: 0 0 60px 0;
     z-index: 2;
     position: relative;
 }
@@ -194,7 +196,9 @@ header a {
 }
 
 .logo {
-    img {
+    &-img {
+        width: 70px;
+        height: 70px;
         margin: 0 auto;
         margin-bottom: 20px;
     }
@@ -204,14 +208,22 @@ header a {
 
 
 /* introdução */
-.introducao {
-    margin-top: 60px;
 
-    img {
+main {
+    background-image: url(../images/background_trilhaFront-End.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.introducao {
+
+    &-perfil {
         max-width: 100%;
         border-radius: 50%;
         width: 300px;
         margin: 0 auto;
+        margin-top: 40px;
         margin-bottom: 20px;
     }
 
@@ -239,7 +251,7 @@ header a {
         display: flex;
         gap: 20px;
         justify-content: center;
-        margin-top: 40px;
+        padding: 40px 0;
 
         li {
             width: 50px;
@@ -256,42 +268,56 @@ header a {
     }
 }
 
-.img-fundo{
+.img-fundo {
     position: absolute;
-      bottom: 0px;
-      left: 0px;
-      filter: blur(200px);
-      z-index: -1;
-      mix-blend-mode: screen;
-      pointer-events: none;
-      opacity: 0.25;
-      animation: girablob 20s infinite linear;
-  }
+    bottom: 0px;
+    left: 0px;
+    filter: blur(200px);
+    z-index: -1;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    opacity: 0.25;
+    animation: girablob 20s infinite linear;
+}
 
-  .img-fundo2{
+.img-fundo2 {
     position: absolute;
-      top: 1500px;
-      right: 0px;
-      filter: blur(200px);
-      z-index: -1;
-      mix-blend-mode: screen;
-      pointer-events: none;
-      opacity: 0.25;
-      animation: girablob 20s infinite linear;
-  }
-  @keyframes girablob {
+    top: 1500px;
+    right: 0px;
+    filter: blur(200px);
+    z-index: -1;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    opacity: 0.25;
+    animation: girablob 20s infinite linear;
+}
+
+@keyframes girablob {
     0% {
         transform: rotate(0deg);
         opacity: 0.25;
-    } 49%, 51%, 53%, 55%, 57% {
+    }
+
+    49%,
+    51%,
+    53%,
+    55%,
+    57% {
         opacity: 0.25;
-    } 50%, 52%, 54%, 56% {
+    }
+
+    50%,
+    52%,
+    54%,
+    56% {
         opacity: 0;
-    } 100% {
+    }
+
+    100% {
         opacity: 0.25;
         transform: rotate(360deg);
     }
-  }
+}
 
 /*Section sobre*/
 .sobre p {
@@ -317,7 +343,7 @@ header a {
 
     &-card {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 20px;
     }
 
@@ -334,7 +360,7 @@ header a {
     }
 }
 
-// Hobby
+// Section Hobby
 
 .hobby {
     &-container {
@@ -374,7 +400,7 @@ header a {
 
 }
 
-// Motivação
+// Section Motivação
 
 .motivacao {
     &-container {
@@ -395,7 +421,7 @@ header a {
 }
 
 
-/*footer*/
+// Footer
 footer {
     width: 100%;
     margin-top: 100px;
@@ -469,7 +495,7 @@ footer {
     }
 
     .faixa1 {
-        margin: 60px 0 40px 0;
+        margin: 0px 0 40px 0;
     }
 
     .header {
@@ -499,7 +525,8 @@ footer {
             font-size: 1.2rem;
         }
 
-        img {
+        &-perfil {
+            padding-top: 60px;
             margin: 0 auto;
             max-width: 100%;
             width: 230px;
@@ -517,7 +544,7 @@ footer {
             gap: 10px !important;
             width: 260px;
             margin: 0 auto;
-            margin-top: 40px;
+            padding: 40px 0;
         }
     }
 
@@ -569,16 +596,17 @@ footer {
         opacity: 0.25;
         animation: girablob 20s infinite linear;
     }
+
     .img-fundo2 {
-      position: absolute;
-      top: 1300px;
-      right: 0px;
-      filter: blur(85px);
-      z-index: -1;
-      mix-blend-mode: screen;
-      pointer-events: none;
-      opacity: 0.25;
-      animation: girablob 20s infinite linear;
+        position: absolute;
+        top: 1300px;
+        right: 0px;
+        filter: blur(85px);
+        z-index: -1;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        opacity: 0.25;
+        animation: girablob 20s infinite linear;
     }
 }
 

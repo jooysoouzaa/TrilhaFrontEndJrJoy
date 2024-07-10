@@ -15,6 +15,7 @@ function compilaSass() {
         .pipe(gulp.dest('./build/styles'));
 }
 
+
 // Função para comprimir imagens
 function comprimeImagens() {
     return gulp.src('./source/images/*')
