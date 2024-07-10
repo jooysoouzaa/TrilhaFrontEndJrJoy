@@ -1,29 +1,41 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass')); // Comprimir SASS
+const sass = require('gulp-sass')(require('sass')); // Para compilar SASS
 const sourcemaps = require('gulp-sourcemaps');
-const imagemin = require('gulp-imagemin'); // Comprimir imagens
+const imagemin = require('gulp-imagemin'); // Para comprimir imagens
+const replace = require('gulp-replace'); // Plugin para substituir strings
 
+// Função para compilar SASS
+function compilaSass() {
+    return gulp.src('./source/styles/style.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./build/styles'));
+}
+
+// Função para comprimir imagens
 function comprimeImagens() {
     return gulp.src('./source/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./build/images'));
 }
 
-function compilaSass() {
-    return gulp.src('./source/styles/style.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./build/styles'));
+// Tarefa para substituir URLs no HTML
+function substituiUrls() {
+    return gulp.src('./source/*.html') // Assumindo que seus arquivos HTML estão em source/
+        .pipe(replace('ENDERECO_DO_CSS', './styles/style.css')) 
+        .pipe(replace('ENDERECO_DA_IMAGEM', './images/*')) 
+        .pipe(gulp.dest('./build'));
 }
 
-//Tarefa de build para Vercel
-gulp.task('build', gulp.parallel(compilaSass, comprimeImagens));
+// Tarefa de build completa
+gulp.task('build', gulp.series(compilaSass, comprimeImagens, substituiUrls));
 
-
-exports.default = function () {
+// Tarefa padrão (watch)
+gulp.task('default', function () {
     gulp.watch('./source/styles/*.scss', { ignoreInitial: false }, gulp.series(compilaSass));
     gulp.watch('./source/images/*', { ignoreInitial: false }, gulp.series(comprimeImagens));
-};
+    gulp.watch('./source/*.html', { ignoreInitial: false }, gulp.series(substituiUrls));
+});
