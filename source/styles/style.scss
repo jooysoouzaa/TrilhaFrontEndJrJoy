@@ -268,57 +268,6 @@ main {
     }
 }
 
-.img-fundo {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    filter: blur(200px);
-    z-index: -1;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    opacity: 0.25;
-    animation: girablob 20s infinite linear;
-}
-
-.img-fundo2 {
-    position: absolute;
-    top: 1500px;
-    right: 0px;
-    filter: blur(200px);
-    z-index: -1;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    opacity: 0.25;
-    animation: girablob 20s infinite linear;
-}
-
-@keyframes girablob {
-    0% {
-        transform: rotate(0deg);
-        opacity: 0.25;
-    }
-
-    49%,
-    51%,
-    53%,
-    55%,
-    57% {
-        opacity: 0.25;
-    }
-
-    50%,
-    52%,
-    54%,
-    56% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.25;
-        transform: rotate(360deg);
-    }
-}
-
 /*Section sobre*/
 .sobre p {
     font-size: 1.25rem;
@@ -585,29 +534,6 @@ footer {
         }
     }
 
-    .img-fundo {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        filter: blur(85px);
-        z-index: -1;
-        mix-blend-mode: screen;
-        pointer-events: none;
-        opacity: 0.25;
-        animation: girablob 20s infinite linear;
-    }
-
-    .img-fundo2 {
-        position: absolute;
-        top: 1300px;
-        right: 0px;
-        filter: blur(85px);
-        z-index: -1;
-        mix-blend-mode: screen;
-        pointer-events: none;
-        opacity: 0.25;
-        animation: girablob 20s infinite linear;
-    }
 }
 
 
