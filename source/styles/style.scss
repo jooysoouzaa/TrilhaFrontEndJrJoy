@@ -50,6 +50,49 @@ img {
     padding: 20px 60px;
 }
 
+// Faixa
+.faixa1 {
+    background: variaveis.$corPrincipal;
+    transform: rotate(2deg);
+    width: 110%;
+}
+
+.text-wrapper {
+    display: flex;
+    padding: 15px;
+    text-align: right;
+
+    p {
+        font-family: 'Neulis Alt' !important;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        white-space: nowrap;
+        font-size: 1em;
+        color: #fff;
+    }
+
+}
+
+#text-wrapper1 {
+    animation: animafaixa 15s infinite linear;
+}
+
+#text-wrapper2 {
+    animation: animafaixa 15s infinite linear reverse;
+}
+
+@keyframes animafaixa {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
 .subtitulo {
     color: variaveis.$corPrincipal;
     margin-top: 100px;
@@ -96,6 +139,66 @@ img {
 }
 
 
+/*Seção faixa*/
+.faixa1 {
+    background: variaveis.$corPrincipal;
+    width: 110%;
+    margin: 0 0 60px 0;
+    z-index: 2;
+    position: relative;
+}
+
+.faixa2 {
+    background: variaveis.$corPrincipal;
+    transform: rotate(-3deg) translateY(-110px);
+    z-index: 1;
+    width: 110%;
+    opacity: 0.4;
+    filter: blur(3px);
+}
+
+
+.text-wrapper p {
+    font-family: variaveis.$fontPrincipal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    color: #fff;
+}
+
+
+.text-wrapper {
+    display: flex;
+    padding: 15px;
+    text-align: right;
+}
+
+.text-wrapper p {
+    font-family: variaveis.$fontPrincipal;
+    font-size: 1em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#text-wrapper1 {
+    animation: animafaixa 15s infinite linear;
+}
+
+#text-wrapper2 {
+    animation: animafaixa 15s infinite linear reverse;
+}
+
+
+
+@keyframes animafaixa {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 /*Header*/
 .header {
@@ -208,6 +311,7 @@ main {
     }
 }
 
+
 /*Section sobre*/
 .sobre p {
     font-size: 1.25rem;
@@ -249,7 +353,7 @@ main {
     }
 }
 
-// Section Hobby
+// Hobby
 
 .hobby {
     &-container {
@@ -289,7 +393,7 @@ main {
 
 }
 
-// Section Motivação
+// Motivação
 
 .motivacao {
     &-container {
@@ -310,7 +414,7 @@ main {
 }
 
 
-// Footer
+/*footer*/
 footer {
     width: 100%;
     margin-top: 100px;
@@ -381,6 +485,10 @@ footer {
 
     .subtitulo {
         margin-top: 40px;
+    }
+
+    .faixa1 {
+        margin: 0px 0 40px 0;
     }
 
     .header {
