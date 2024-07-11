@@ -15,7 +15,6 @@ function compilaSass() {
         .pipe(gulp.dest('./build/styles'));
 }
 
-
 // Função para comprimir imagens
 function comprimeImagens() {
     return gulp.src('./source/images/*')
@@ -32,7 +31,7 @@ function substituiUrls() {
 }
 
 // Tarefa de build completa
-gulp.task('build', gulp.series(compilaSass, comprimeImagens, substituiUrls));
+gulp.task('build', gulp.series(compilaSass, comprimeImagens, substituiUrls,));
 
 // Tarefa padrão (watch)
 gulp.task('default', function () {

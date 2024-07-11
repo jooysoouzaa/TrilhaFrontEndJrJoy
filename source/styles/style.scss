@@ -413,6 +413,30 @@ main {
     }
 }
 
+// Seção botão voltar ao topo
+.btn-top {
+    a {
+        display: flex; 
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #e43939;
+    color: white;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 400ms;
+    text-align: center;
+    line-height: 40px;
+
+        &:hover {
+            background-color: darken(variaveis.$corPrincipal, 20%);
+        }
+    }
+}
+
 
 /*footer*/
 footer {
